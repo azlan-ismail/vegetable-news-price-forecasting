@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this research compendium, please cite the manuscript and, once available, the archived repository release."
+title: "Evaluating News-Derived Signals for Vegetable Price Forecasting"
+type: software
+repository-code: "https://github.com/azlan-ismail/vegetable-news-price-forecasting"
+version: 0.1.0
+authors:
+  - family-names: Ruslee
+    given-names: Nur Aisyah
+  - family-names: Kamaru Zaman
+    given-names: Ezzatul Akmal
+  - family-names: Mutalib
+    given-names: Sofianita
+  - family-names: Ismail
+    given-names: Azlan
+    email: azlanismail@uitm.edu.my
+preferred-citation:
+  type: article
+  title: "Incremental Predictive Utility of News-Derived Signals for Short-Horizon Vegetable Price Forecasting: A Coverage-Aware Conditional Evaluation"
+  authors:
+    - family-names: Ruslee
+      given-names: Nur Aisyah
+    - family-names: Kamaru Zaman
+      given-names: Ezzatul Akmal
+    - family-names: Mutalib
+      given-names: Sofianita
+    - family-names: Ismail
+      given-names: Azlan
+  year: 2026

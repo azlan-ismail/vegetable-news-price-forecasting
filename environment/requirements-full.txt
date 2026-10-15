@@ -1,0 +1,13 @@
+-r requirements-forecast.txt
+accelerate==1.2.1
+bertopic==0.16.4
+hdbscan==0.8.40
+langid==1.1.6
+safetensors==0.4.5
+sentence-transformers==3.3.1
+transformers==4.47.1
+tqdm==4.67.1
+umap-learn==0.5.7
+
+# PyTorch is intentionally not pinned here. The authoritative notebook uses
+# the CUDA-compatible PyTorch build supplied by Google Colab.

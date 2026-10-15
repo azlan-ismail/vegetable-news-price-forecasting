@@ -1,0 +1,33 @@
+item,volatility_regime,model,n,mae,rmse,inferential_status
+CILI AKAR HIJAU,high,price_only_ridge,13,0.568192534227676,0.7262542533618154,descriptive_only
+CILI AKAR HIJAU,high,text_enhanced_ridge,13,1.4641050523714765,1.7007461923078642,descriptive_only
+CILI AKAR HIJAU,lower,price_only_ridge,32,0.2859773106022093,0.4169525012196545,descriptive_only
+CILI AKAR HIJAU,lower,text_enhanced_ridge,32,0.6626947926358534,0.9520592275978523,descriptive_only
+CILI AKAR MERAH,high,price_only_ridge,16,1.1128640190640426,1.2243971186574378,descriptive_only
+CILI AKAR MERAH,high,text_enhanced_ridge,16,1.9514049895155312,2.4376286745487685,descriptive_only
+CILI AKAR MERAH,lower,price_only_ridge,29,0.2646511092775922,0.36073270900608445,descriptive_only
+CILI AKAR MERAH,lower,text_enhanced_ridge,29,0.46908516844041515,0.7551676573191255,descriptive_only
+CILI HIJAU,high,price_only_ridge,14,0.5804645234607141,0.7015719739628602,descriptive_only
+CILI HIJAU,high,text_enhanced_ridge,14,0.6570554882318997,0.7855195901759037,descriptive_only
+CILI HIJAU,lower,price_only_ridge,31,0.2926334814424311,0.34399560348915764,descriptive_only
+CILI HIJAU,lower,text_enhanced_ridge,31,0.3223397219279672,0.441759988007492,descriptive_only
+CILI MERAH - KULAI,high,price_only_ridge,16,0.7475524944340101,0.8861359337733941,descriptive_only
+CILI MERAH - KULAI,high,text_enhanced_ridge,16,0.7814327931611573,0.9220663888532459,descriptive_only
+CILI MERAH - KULAI,lower,price_only_ridge,29,0.14629232267293196,0.18254862098319402,descriptive_only
+CILI MERAH - KULAI,lower,text_enhanced_ridge,29,0.5946471132775819,0.6761057674859308,descriptive_only
+CILI MERAH - MINYAK,high,price_only_ridge,9,0.7893545463510266,0.8718958958767579,descriptive_too_small_n_lt_10
+CILI MERAH - MINYAK,high,text_enhanced_ridge,9,1.2771434781764732,1.437991909836691,descriptive_too_small_n_lt_10
+CILI MERAH - MINYAK,lower,price_only_ridge,36,0.4295792486379685,0.5047106860122614,descriptive_only
+CILI MERAH - MINYAK,lower,text_enhanced_ridge,36,0.7998536734795043,0.8985198185455996,descriptive_only
+SAWI HIJAU,high,price_only_ridge,13,0.41192624064750605,0.5052564855020055,descriptive_only
+SAWI HIJAU,high,text_enhanced_ridge,13,0.5939331803570459,0.741488236297771,descriptive_only
+SAWI HIJAU,lower,price_only_ridge,32,0.23116062242982693,0.28900213122442237,descriptive_only
+SAWI HIJAU,lower,text_enhanced_ridge,32,0.31303671868766825,0.4084529507479141,descriptive_only
+TIMUN,high,price_only_ridge,8,0.30937870567550235,0.3607176022318101,descriptive_too_small_n_lt_10
+TIMUN,high,text_enhanced_ridge,8,0.36767735365744586,0.43115093660719606,descriptive_too_small_n_lt_10
+TIMUN,lower,price_only_ridge,37,0.10403645525177709,0.1455317402823822,descriptive_only
+TIMUN,lower,text_enhanced_ridge,37,0.12894038880622635,0.1578188742666745,descriptive_only
+TOMATO,high,price_only_ridge,12,0.3963958777304548,0.4585177761960547,descriptive_only
+TOMATO,high,text_enhanced_ridge,12,0.4317026258922179,0.5073993982540796,descriptive_only
+TOMATO,lower,price_only_ridge,33,0.1956279475042467,0.2436435260701479,descriptive_only
+TOMATO,lower,text_enhanced_ridge,33,0.40088561359340225,0.5442059872935983,descriptive_only

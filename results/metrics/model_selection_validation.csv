@@ -1,0 +1,11 @@
+model,alpha,validation_rmse,selected
+price_only_ridge,0.1,0.42241612246749927,True
+price_only_ridge,1.0,0.4464320602492578,False
+price_only_ridge,10.0,0.4765342211251883,False
+price_only_ridge,100.0,0.4898387809553769,False
+price_only_ridge,1000.0,0.8275775185514775,False
+text_enhanced_ridge,0.1,0.60427647913942,False
+text_enhanced_ridge,1.0,0.5832341002670826,False
+text_enhanced_ridge,10.0,0.5689612231407131,False
+text_enhanced_ridge,100.0,0.5263109926088035,True
+text_enhanced_ridge,1000.0,0.8305574741271974,False

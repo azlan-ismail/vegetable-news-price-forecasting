@@ -1,0 +1,72 @@
+{
+  "status": "exploratory_conditional_text_analysis",
+  "seed": 42,
+  "fit_end_date": "2025-05-15",
+  "split_sizes_dates": {
+    "train": 30,
+    "validation": 15,
+    "test": 45
+  },
+  "commodities": 8,
+  "training_rows_pooled": 240,
+  "validation_rows_pooled": 120,
+  "test_rows_pooled": 360,
+  "test_first_target": "2025-06-08",
+  "test_last_target": "2025-12-05",
+  "test_max_calendar_spacing_days": 71,
+  "translation_failure_rate": 0.0,
+  "fit_articles": 1657,
+  "transformed_articles": 2018,
+  "regular_topics": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "topic_minus_one_rate": 0.5001360544217687,
+  "selected_alpha": {
+    "price_only_ridge": 0.1,
+    "text_enhanced_ridge": 100.0
+  },
+  "models": {
+    "translation": "facebook/nllb-200-distilled-600M",
+    "topic_embedding": "sentence-transformers/all-MiniLM-L6-v2",
+    "sentiment": "ProsusAI/finbert",
+    "forecaster": "pooled Ridge with commodity one-hot indicators"
+  },
+  "claims_guard": {
+    "general_daily_forecasting_claim_supported": false,
+    "conditional_on_verified_news_exploratory_claim_only": true,
+    "dm_hln_confirmatory": false,
+    "volatility_inferential": false
+  },
+  "integrity_checks": {
+    "all_evaluation_dates_have_verified_primary_text": true,
+    "topic_fit_precedes_validation": true,
+    "test_pairs_aligned": true,
+    "no_unavailable_days_zero_filled": true,
+    "topic_minus_one_excluded_from_topic_predictors": true
+  },
+  "input_hashes": {
+    "manifest": "d417d268a9f90f960b799ba5332d7a9777e3190d7dd866c8419525075a6afcdd",
+    "primary_news": "5694ee8ef9aa6ff583719ed3b709c0eda2acf69c56b3611f3849bcf284785aba",
+    "news_availability": "4ee2a322b945cd097b5e23273f32f5ad6b87063b6e5c92e6963e6c684af4049b",
+    "price_daily": "902edbf2cf37de49154bf79052ff6c9bcd6d8047af479d664d45f68b3454ef1b",
+    "price_features": "0b888ddb20286690db52a68d9a2e532286520204dd5b5af99c19b056c8223666"
+  }
+}

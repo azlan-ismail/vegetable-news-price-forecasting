@@ -1,0 +1,78 @@
+{
+  "status": "corrected_preprocessing_complete_pretranslation",
+  "raw_files": {
+    "price": {
+      "name": "price_catcher.csv",
+      "sha256": "9cef61e206c4953681ffa4825787644c675ae6b3383dee324e3bb70029b6778a",
+      "rows": 1912155
+    },
+    "news": {
+      "name": "googlenews.csv",
+      "sha256": "98a67031c391baadd410884bea48e944782abd9b78f9a21f6efcea03f5c637e3",
+      "rows": 27113
+    }
+  },
+  "price": {
+    "items": [
+      "CILI AKAR HIJAU",
+      "CILI AKAR MERAH",
+      "CILI HIJAU",
+      "CILI MERAH - KULAI",
+      "CILI MERAH - MINYAK",
+      "SAWI HIJAU",
+      "TIMUN",
+      "TOMATO"
+    ],
+    "daily_rows": 2712,
+    "missing_item_days": 266,
+    "causal_outlier_flags": 388,
+    "primary_series": "national daily median with forward fill only; no outlier replacement",
+    "sensitivity_series": "causal trailing-median replacement where |robust z| > 4"
+  },
+  "news": {
+    "raw_rows": 27113,
+    "exact_rows_after_deduplication": 18129,
+    "unique_title_day_articles": 16212,
+    "primary_full_text_articles": 3675,
+    "sensitivity_articles": 16015,
+    "sensitivity_title_only_articles": 12340,
+    "language_stage": "not executed because the translated intermediate file and translation dependencies were not provided",
+    "timestamp_rule": "raw naive timestamp retained; conservative text_cutoff_day is one day before forecast_origin"
+  },
+  "evaluation": {
+    "validation_observations": 30,
+    "validation_span": [
+      "2025-09-03",
+      "2025-10-05"
+    ],
+    "validation_excluded_calendar_dates": [
+      "2025-09-05",
+      "2025-09-15",
+      "2025-09-16"
+    ],
+    "test_observations": 60,
+    "test_span": [
+      "2025-10-06",
+      "2025-12-05"
+    ],
+    "test_excluded_calendar_dates": [
+      "2025-10-20"
+    ]
+  },
+  "checks": {
+    "eight_price_items": true,
+    "one_row_per_item_date": true,
+    "no_backward_fill_first_day": true,
+    "validation_dates": true,
+    "test_dates": true,
+    "all_calendar_targets_observed": true,
+    "primary_news_unique_identity": true,
+    "sensitivity_news_unique_identity": true
+  },
+  "remaining_before_modeling": [
+    "Run deterministic language identification and translation using a frozen, recorded tool/version.",
+    "Fit BERTopic only on news available before the validation period, then freeze it.",
+    "Run ProsusAI/finbert on text that has not duplicated the title for title-only records.",
+    "Construct lagged topic/sentiment features using text_cutoff_day."
+  ]
+}

@@ -1,0 +1,20 @@
+name: Validate public reproduction
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  reproduce-forecasting:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: environment/requirements-forecast.txt
+      - name: Install dependencies
+        run: python -m pip install -r environment/requirements-forecast.txt
+      - name: Reproduce and verify reference results
+        run: python src/reproduce_forecasting.py --check-reference

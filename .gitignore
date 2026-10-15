@@ -1,0 +1,32 @@
+# Restricted or local data
+raw_data/
+private_data/
+Vegetable_Forecasting_Corrected_Preprocessing.zip
+*Conditional_Rerun_Outputs.zip
+
+# Generated analysis outputs
+build/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# LaTeX build products
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
