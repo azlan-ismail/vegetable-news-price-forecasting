@@ -1,12 +1,13 @@
 # Evaluating News-Derived Signals for Vegetable Price Forecasting
 
 - **Repository:** <https://github.com/azlan-ismail/vegetable-news-price-forecasting>
-- **Status:** Private working repository pending scholarly release.
+- **Status:** Public research compendium accompanying a manuscript under review.
+- **Licences:** MIT for code; CC BY 4.0 for derived data, figures, and documentation (see `LICENSE.md`).
 
 Reproducibility materials for the manuscript:
 
-> **Incremental Predictive Utility of News-Derived Signals for Short-Horizon
-> Vegetable Price Forecasting: A Coverage-Aware Conditional Evaluation**
+> **Separating Information from Overfitting: A Placebo-Benchmarked Evaluation
+> of News-Derived Signals for Short-Horizon Vegetable Price Forecasting**
 
 The study tests whether BERTopic--FinBERT news features improve one-day-ahead
 price forecasts for eight Malaysian vegetables. Its central comparison uses
@@ -23,9 +24,11 @@ origin.
 | Text-enhanced Ridge | 0.9055 |
 
 The text-enhanced model's RMSE was 78.6% higher than that of the matched
-price-only model. This is a conditional negative result for 45 irregular test
-dates. It is not evidence about arbitrary daily forecasting or the causal effect
-of news.
+price-only model. The diagnostic re-analysis shows that this loss is a cost of
+the text block's dimensionality: news vectors permuted across dates raise RMSE
+by a similar amount (median 73.6%), compact text representations change RMSE by
+-1.2% to +7.3%, and bootstrap intervals bound any RMSE reduction from news at a
+few per cent. Results concern 45 irregular, coverage-defined test dates.
 
 ## Repository contents
 
@@ -34,9 +37,13 @@ of news.
 | `notebooks/conditional_text_rerun.ipynb` | Authoritative end-to-end Google Colab workflow |
 | `src/preprocess.py` | Causal price and news preprocessing with explicit commodity selection |
 | `src/reproduce_forecasting.py` | Lightweight reproduction of the matched Ridge comparison from released aggregate data |
-| `src/make_publication_figures.py` | Regenerates the two result figures |
+| `src/make_publication_figures.py` | Regenerates the two baseline result figures |
+| `src/diagnostic_reanalysis.py` | Placebo text blocks, block/PCA ablation, return specification, covariate shift, expanding refits, bootstrap intervals |
+| `src/clark_west.py` | Clark--West nested-model tests on the diagnostic predictions |
+| `src/make_diagnostic_figures.py` | Regenerates the placebo and ablation figures |
 | `data/derived/` | Public-safe preprocessing outputs and aggregate/model-ready data |
 | `results/` | Validation results, predictions, metrics, diagnostics, and figures |
+| `results/diagnostic_reanalysis/` | Reference outputs of the diagnostic re-analysis |
 | `environment/` | Minimal pinned dependencies for lightweight and full-pipeline runs |
 
 ## Quick reproduction from public-safe data
@@ -54,6 +61,17 @@ python src/make_publication_figures.py
 
 Successful verification writes outputs to `build/reproduced/` and reports
 `"reference_verification": "passed"`.
+
+To run the diagnostic re-analysis (about 15 minutes on a laptop CPU):
+
+```bash
+python src/diagnostic_reanalysis.py      # writes build/diagnostics/
+python src/clark_west.py
+python src/make_diagnostic_figures.py
+```
+
+Reference outputs are in `results/diagnostic_reanalysis/`. The placebo draws
+use seed 42; Ridge fits are deterministic.
 
 ## Full text-processing workflow
 
@@ -105,8 +123,5 @@ Zenodo is recommended so the exact research compendium can receive a DOI.
 
 ## Release status
 
-This private working repository is technically validated. Public release still
-requires approval of the licences for the authors' materials, confirmation of
-the target journal's anonymity requirements, creation of a versioned release,
-and archival of that release with a persistent DOI. See
-`RELEASE_CHECKLIST.md`.
+The repository is public and technically validated. A versioned release
+archived with Zenodo will add a persistent DOI. See `RELEASE_CHECKLIST.md`.

@@ -1,0 +1,7 @@
+target,text_block,alpha,test_rmse
+level,none (price-only),0.1,0.4170789878583485
+level,all 42 text features,100.0,0.6276389282309915
+level,corpus-wide 4,0.1,0.4253714733371164
+return,none (price-only),1000.0,0.43930139627586423
+return,all 42 text features,1000.0,0.4421203160202373
+return,corpus-wide 4,1000.0,0.4415935360838841

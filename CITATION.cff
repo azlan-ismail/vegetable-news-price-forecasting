@@ -3,7 +3,8 @@ message: "If you use this research compendium, please cite the manuscript and, o
 title: "Evaluating News-Derived Signals for Vegetable Price Forecasting"
 type: software
 repository-code: "https://github.com/azlan-ismail/vegetable-news-price-forecasting"
-version: 0.1.0
+version: 0.2.0
+license: MIT
 authors:
   - family-names: Ruslee
     given-names: Nur Aisyah
@@ -16,7 +17,7 @@ authors:
     email: azlanismail@uitm.edu.my
 preferred-citation:
   type: article
-  title: "Incremental Predictive Utility of News-Derived Signals for Short-Horizon Vegetable Price Forecasting: A Coverage-Aware Conditional Evaluation"
+  title: "Separating Information from Overfitting: A Placebo-Benchmarked Evaluation of News-Derived Signals for Short-Horizon Vegetable Price Forecasting"
   authors:
     - family-names: Ruslee
       given-names: Nur Aisyah

@@ -1,0 +1,11 @@
+{
+  "naive_test_rmse": 0.43509673253963493,
+  "n_text_features": 42,
+  "mean_articles_per_date": {
+    "test": 19.955555555555556,
+    "train": 51.0,
+    "validation": 54.53333333333333
+  },
+  "share_text_features_abs_smd_gt_0_5": 0.38095238095238093,
+  "median_abs_smd": 0.3942541529741498
+}
