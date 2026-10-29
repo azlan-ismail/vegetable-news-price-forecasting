@@ -200,7 +200,7 @@ def main() -> None:
     ap.add_argument("--model-data", type=Path,
                     default=ROOT / "data/derived/modelling/conditional_model_ready_dataset.csv")
     ap.add_argument("--output-dir", type=Path, default=ROOT / "build/diagnostics")
-    ap.add_argument("--n-placebo", type=int, default=1000)
+    ap.add_argument("--n-placebo", type=int, default=500)
     ap.add_argument("--n-boot", type=int, default=5000)
     args = ap.parse_args()
     out = args.output_dir
