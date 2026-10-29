@@ -62,7 +62,7 @@ colors = ["#59A14F", "#4E79A7", "#E15759"]
 
 fig, ax = plt.subplots(figsize=(6.2, 3.25))
 bars = ax.bar(model_labels, values, color=colors, width=0.62)
-ax.set_ylabel("RMSE (source price units)")
+ax.set_ylabel("RMSE (RM/kg)")
 ax.set_ylim(0, max(values) * 1.18)
 ax.grid(axis="y", color="#D9D9D9", linewidth=0.6, alpha=0.8)
 ax.set_axisbelow(True)
