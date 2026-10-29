@@ -21,6 +21,7 @@ ap.add_argument("--atol", type=float, default=1e-9)
 args = ap.parse_args()
 
 failures = []
+lines = []
 for ref_path in sorted(REF.glob("*")):
     new_path = NEW / ref_path.name
     if not new_path.exists():
@@ -45,9 +46,25 @@ for ref_path in sorted(REF.glob("*")):
                     ok = False
     else:
         continue
-    print(f"{'OK  ' if ok else 'FAIL'} {ref_path.name}  max abs diff = {diff:.3g}")
+    line = f"{'OK  ' if ok else 'FAIL'} {ref_path.name}  max abs diff = {diff:.3g}"
+    print(line)
+    lines.append(line)
     if not ok:
         failures.append(ref_path.name)
+
+# Headline numbers reported in the manuscript, fresh vs reference.
+try:
+    pa, pb = pd.read_csv(NEW / "placebo.csv"), pd.read_csv(REF / "placebo.csv")
+    for c in ("real_text_rmse", "permuted_median", "noise_median", "share_permuted_le_real"):
+        lines.append(f"placebo {c}: fresh {pa[c].round(4).tolist()} ref {pb[c].round(4).tolist()}")
+    ba, bb = pd.read_csv(NEW / "bootstrap_rmse_ratios.csv"), pd.read_csv(REF / "bootstrap_rmse_ratios.csv")
+    lines.append(f"bootstrap ci_low max abs diff {np.max(np.abs(ba.ci_low - bb.ci_low)):.4f}, "
+                 f"ci_high {np.max(np.abs(ba.ci_high - bb.ci_high)):.4f}, ratio {np.max(np.abs(ba.rmse_ratio - bb.rmse_ratio)):.2e}")
+except Exception as exc:  # noqa: BLE001
+    lines.append(f"summary unavailable: {exc}")
+import os
+if os.environ.get("GITHUB_ACTIONS"):
+    print("::notice title=Diagnostic comparison::" + "%0A".join(lines))
 
 if failures:
     print("Mismatched outputs:", ", ".join(failures))
