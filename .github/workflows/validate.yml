@@ -18,3 +18,22 @@ jobs:
         run: python -m pip install -r environment/requirements-forecast.txt
       - name: Reproduce and verify reference results
         run: python src/reproduce_forecasting.py --check-reference
+
+  reproduce-diagnostics:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+          cache-dependency-path: environment/requirements-forecast.txt
+      - name: Install dependencies
+        run: python -m pip install -r environment/requirements-forecast.txt
+      - name: Run diagnostic re-analysis
+        run: |
+          python src/diagnostic_reanalysis.py
+          python src/clark_west.py
+      - name: Compare with reference outputs
+        run: python src/check_diagnostics.py

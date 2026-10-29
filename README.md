@@ -62,12 +62,13 @@ python src/make_publication_figures.py
 Successful verification writes outputs to `build/reproduced/` and reports
 `"reference_verification": "passed"`.
 
-To run the diagnostic re-analysis (about 15 minutes on a laptop CPU):
+To run the diagnostic re-analysis (about 10 minutes on a laptop CPU):
 
 ```bash
 python src/diagnostic_reanalysis.py      # writes build/diagnostics/
 python src/clark_west.py
 python src/make_diagnostic_figures.py
+python src/check_diagnostics.py       # compares with results/diagnostic_reanalysis/
 ```
 
 Reference outputs are in `results/diagnostic_reanalysis/`. The placebo draws

@@ -10,6 +10,7 @@ diagnostics:
 	python src/diagnostic_reanalysis.py
 	python src/clark_west.py
 	python src/make_diagnostic_figures.py
+	python src/check_diagnostics.py
 
 clean:
 	rm -rf build
