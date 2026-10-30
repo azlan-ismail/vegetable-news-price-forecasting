@@ -6,25 +6,25 @@ repository-code: "https://github.com/azlan-ismail/vegetable-news-price-forecasti
 version: 0.2.0
 license: MIT
 authors:
-  - family-names: Ruslee
-    given-names: Nur Aisyah
-  - family-names: Kamaru Zaman
-    given-names: Ezzatul Akmal
-  - family-names: Mutalib
-    given-names: Sofianita
   - family-names: Ismail
     given-names: Azlan
     email: azlanismail@uitm.edu.my
+  - family-names: Ruslee
+    given-names: Nur Aisyah
+  - family-names: Mutalib
+    given-names: Sofianita
+  - family-names: Kamaru Zaman
+    given-names: Ezzatul Akmal
 preferred-citation:
   type: article
   title: "Separating Information from Overfitting: A Placebo-Benchmarked Evaluation of News-Derived Signals for Short-Horizon Vegetable Price Forecasting"
   authors:
-    - family-names: Ruslee
-      given-names: Nur Aisyah
-    - family-names: Kamaru Zaman
-      given-names: Ezzatul Akmal
-    - family-names: Mutalib
-      given-names: Sofianita
     - family-names: Ismail
       given-names: Azlan
+    - family-names: Ruslee
+      given-names: Nur Aisyah
+    - family-names: Mutalib
+      given-names: Sofianita
+    - family-names: Kamaru Zaman
+      given-names: Ezzatul Akmal
   year: 2026
